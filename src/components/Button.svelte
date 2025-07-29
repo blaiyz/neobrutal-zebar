@@ -1,12 +1,11 @@
 <script lang="ts">
   type ButtonProps = {
-    iconClass?: string;
+    children?: any;
     label?: string;
     callback?: () => void;
-    class: string;
-    text?: string;
+    class?: string;
   };
-  let { iconClass, label, callback, text, ...rest }: ButtonProps = $props();
+  let { children, label, callback, ...rest }: ButtonProps = $props();
 </script>
 
 <button
@@ -14,10 +13,9 @@
   onclick={callback}
   aria-label={label}
 >
-  {#if iconClass}
-    <i class="ti ti-{iconClass}"></i>
-  {/if}
-  {#if text}
-    <span class="inline leading-tight">{text}</span>
+  {#if children}
+    {@render children()}
+  {:else}
+    <span class="text-sm">{label}</span>
   {/if}
 </button>

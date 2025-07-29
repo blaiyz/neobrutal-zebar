@@ -2,6 +2,7 @@
   import type { GlazeWmOutput, MediaOutput } from "zebar";
   import { isOnPrimaryMonitor } from "../utils/glazeWmUtils";
   import Meter from "./Meter.svelte";
+  import { Pause, Play, SkipBack, SkipForward } from "@lucide/svelte";
 
   let { glazewm, media }: { glazewm: GlazeWmOutput; media: MediaOutput } =
     $props();
@@ -23,7 +24,7 @@
       aria-label="Previous"
       onclick={() => media.previous()}
     >
-      <i class="ti ti-player-skip-back"></i>
+      <SkipBack />
     </button>
     <button
       class="relative gap-x-2 inline-flex items-center justify-center group transition duration-300 hover:text-zb-accent"
@@ -37,12 +38,11 @@
           (media.currentSession.position / media.currentSession.endTime) * 100
         )}
       >
-        <i
-          class="ti ti-{media.currentSession.isPlaying
-            ? 'player-pause'
-            : 'player-play'}
-             transform group-hover:scale-125"
-        ></i>
+          {#if media.currentSession.isPlaying}
+            <Pause class="transform group-hover:scale-125" />
+          {:else}
+            <Play class="transform group-hover:scale-125" />
+          {/if}
       </Meter>
       <div class="relative flex items-center justify-center ml-2 min-w-24 max-w-md">
         <span
@@ -69,7 +69,7 @@
       aria-label="Next"
       onclick={() => media.next()}
     >
-      <i class="ti ti-player-skip-forward"></i>
+      <SkipForward />
     </button>
   </div>
 {/if}

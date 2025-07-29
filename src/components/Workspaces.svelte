@@ -8,6 +8,7 @@
 
   import Button from "./Button.svelte";
   import { getWindows } from "../utils/glazeWmUtils";
+  import { ArrowRightLeft } from "@lucide/svelte";
 
   const getProcessIcon = (child: Window) => {
     const possibleAppNames = [
@@ -41,10 +42,11 @@
           class="box-border mx-1 px-6 text-zb-ws-{i} {workspace.isDisplayed
             ? `border-zb-ws-${i} hover:border-blend-80`
             : ''}"
-          text={workspace.name}
           callback={() =>
             glazewm!.runCommand(`focus --workspace ${workspace.name}`)}
-        />
+        >
+          {workspace.name}
+        </Button>
       {/if}
     {/each}
     <button
@@ -52,7 +54,10 @@
       class="flex items-center justify-center text-zb-tiling-direction"
       onclick={() => glazewm!.runCommand("toggle-tiling-direction")}
     >
-      <i class="ti ti-switch-{glazewm?.tilingDirection}"></i>
+        <ArrowRightLeft class="transform {glazewm?.tilingDirection === "vertical"
+          ? "rotate-90"
+          : "rotate-0"}" />
+      <!-- <i class="ti ti-switch-{glazewm?.tilingDirection}"></i> -->
     </button>
     {#each glazewm.bindingModes as bindingMode, i}
       <div class="flex items-center">
