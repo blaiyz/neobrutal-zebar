@@ -2,7 +2,10 @@
   import type { GlazeWmOutput, MediaOutput } from "zebar";
   import { isOnPrimaryMonitor } from "../utils/glazeWmUtils";
   import Meter from "./Meter.svelte";
-  import { Pause, Play, SkipBack, SkipForward } from "@lucide/svelte";
+  import Pause from "@lucide/svelte/icons/pause";
+  import Play from "@lucide/svelte/icons/play";
+  import SkipBack from "@lucide/svelte/icons/skip-back";
+  import SkipForward from "@lucide/svelte/icons/skip-forward";
 
   let { glazewm, media }: { glazewm: GlazeWmOutput; media: MediaOutput } =
     $props();

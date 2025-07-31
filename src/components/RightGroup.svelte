@@ -8,6 +8,7 @@
   } from "zebar";
   import NowPlaying from "./NowPlaying.svelte";
   import { isOnPrimaryMonitor } from "../utils/glazeWmUtils";
+  import PointFilled from "@tabler/icons-svelte/icons/point-filled";
 
   type RightGroupProps = {
     date: DateOutput;
@@ -54,7 +55,7 @@
     </div>
   {/if}
   {#if !isOnPrimaryMonitor(glazewm)}
-    <i class="ti ti-point-filled"></i>
+    <PointFilled />
     {date?.formatted}
   {/if}
 </div>

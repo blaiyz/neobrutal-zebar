@@ -10,27 +10,24 @@
   import Button from "./Button.svelte";
   import Meter from "./Meter.svelte";
   import { isOnPrimaryMonitor } from "../utils/glazeWmUtils";
-  import {
-    MemoryStick,
-    Cpu,
-    BatteryCharging,
-    BatteryWarning,
-    BatteryLow,
-    BatteryMedium,
-    BatteryFull,
-    Battery,
-    EthernetPort,
-    Wifi,
-    WifiHigh,
-    WifiLow,
-    WifiOff,
-    WifiZero,
-    ChevronsDown,
-    ChevronsUp
-  } from "@lucide/svelte";
-  import { IconHeartFilled } from "@tabler/icons-svelte";
-  // import { ChevronsDown } from "@lucide/svelte";
-  // import { ChevronsUp } from "@lucide/svelte";
+  import MemoryStick from "@lucide/svelte/icons/memory-stick";
+  import Cpu from "@lucide/svelte/icons/cpu";
+  import BatteryCharging from "@lucide/svelte/icons/battery-charging";
+  import BatteryWarning from "@lucide/svelte/icons/battery-warning";
+  import BatteryLow from "@lucide/svelte/icons/battery-low";
+  import BatteryMedium from "@lucide/svelte/icons/battery-medium";
+  import BatteryFull from "@lucide/svelte/icons/battery-full";
+  import Battery from "@lucide/svelte/icons/battery";
+  import EthernetPort from "@lucide/svelte/icons/ethernet-port";
+  import Wifi from "@lucide/svelte/icons/wifi";
+  import WifiHigh from "@lucide/svelte/icons/wifi-high";
+  import WifiLow from "@lucide/svelte/icons/wifi-low";
+  import WifiZero from "@lucide/svelte/icons/wifi-zero";
+  import WifiOff from "@lucide/svelte/icons/wifi-off";
+  import ChevronsDown from "@lucide/svelte/icons/chevrons-down";
+  import ChevronsUp from "@lucide/svelte/icons/chevrons-up";
+
+  import IconHeartFilled from "@tabler/icons-svelte/icons/heart-filled";
 
   type LeftGroupProps = {
     battery: BatteryOutput;

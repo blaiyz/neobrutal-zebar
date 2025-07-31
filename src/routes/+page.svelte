@@ -101,6 +101,7 @@
       </Group>
     </div>
     <Group
+      rightCurve={false}
       class="justify-self-end px-4 {isOnPrimaryMonitor(glazewm)
         ? 'pr-zrby'
         : ''}"

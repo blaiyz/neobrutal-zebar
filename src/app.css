@@ -1,5 +1,6 @@
+/* Since we're using nerdfonts only for weather icons, and the weather doesn't load offline anyway,
+  it's okay to use a CDN for them. Everything else is bundled. */
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
-@import "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css";
 @import "themes/rose-pine.css";
 @import "themes/catppuccin.css";
 @import "themes/nord.css";
@@ -20,4 +21,9 @@
 .lucide-icon, .tabler-icon {
   width: 1em;
   height: 1em;
+}
+
+.nf, .tabler-icon {
+  stroke-width: 6%;
+  stroke: currentColor;
 }
